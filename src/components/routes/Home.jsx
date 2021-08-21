@@ -1,12 +1,12 @@
 import React from 'react';
-import Hero from '../pages/home/Hero';
-import Services from '../pages/home/Features';
+import Hero from '../pages/home/hero/Hero';
+import Features from '../pages/home/features/Features';
 
 function Home() {
 	return (
 		<main>
 			<Hero />
-			<Services />
+			<Features />
 		</main>
 	);
 }

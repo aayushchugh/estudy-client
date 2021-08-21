@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { HPrimary, HSecondary } from '../../UiComponents/Typography';
-import { BPrimary } from '../../UiComponents/Btn';
+import { HPrimary, HSecondary } from '../../../UiComponents/Typography';
+import { BPrimary } from '../../../UiComponents/Btn';
 
 import './hero.scss';
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import { HPrimary } from '../../UiComponents/Typography';
-import { BPrimary } from '../../UiComponents/Btn';
+import { HPrimary } from '../../../UiComponents/Typography';
+import { BPrimary } from '../../../UiComponents/Btn';
 
-function Services() {
+export default function Features() {
 	return (
 		<section>
 			<div>
@@ -15,5 +15,3 @@ function Services() {
 		</section>
 	);
 }
-
-export default Services;

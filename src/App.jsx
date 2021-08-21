@@ -1,4 +1,6 @@
 import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -12,6 +14,7 @@ import NotFound from './components/pages/NotFound';
 function App() {
 	return (
 		<>
+			<CssBaseline />
 			<Router>
 				<Nav />
 				<Switch>

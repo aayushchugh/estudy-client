@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 
-import './Btn.scss';
+import './btn.scss';
 
-export function BtnPrimary({ content, className }) {
+export function BPrimary({ children, className }) {
 	return (
 		<Button variant='contained' className={`btn-primary ${className}`}>
-			{content}
+			{children}
 		</Button>
 	);
 }

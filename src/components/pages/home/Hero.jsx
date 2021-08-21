@@ -1,33 +1,29 @@
 import React from 'react';
 
-import { HPrimary } from '../../UiComponents/Typography';
-import { BtnPrimary } from '../../UiComponents/Btn';
+import { HPrimary, HSecondary } from '../../UiComponents/Typography';
+import { BPrimary } from '../../UiComponents/Btn';
 
-const imgContainerStyles = {
-	height: '38rem',
-};
+import './hero.scss';
 
 function Hero() {
 	return (
-		<section className='flex mt-9 items-center justify-around'>
-			<div style={imgContainerStyles}>
-				<img
-					className='h-full w-full'
-					src='/images/illustrations/hero.svg'
-					alt='background'
-				/>
+		<section className='hero-section'>
+			<div className='hero-section__img'>
+				<img src='/images/illustrations/hero.svg' alt='background' />
 			</div>
 
-			<div className='flex flex-col justify-center'>
-				<HPrimary className='text-7xl xl:text-6xl leading-normal xl:leading-normal'>
+			<div className='hero-section__content'>
+				<HPrimary className='hero-section__heading'>
 					We make Learning fun, <br /> Easy for all <br /> “Completely free”
 				</HPrimary>
 
-				<p className='text-2xl text-center mt-4'>
+				<HSecondary className='hero-section__sub-heading'>
 					A single solution to all school needs
-				</p>
+				</HSecondary>
 
-				<BtnPrimary className='self-end mt-5 mr-12'>Explore &rarr;</BtnPrimary>
+				<BPrimary className='hero-section__btn mt-5 mr-12'>
+					Explore &rarr;
+				</BPrimary>
 			</div>
 		</section>
 	);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BtnPrimary } from '../../UiComponents/Btn';
 
+import { BPrimary } from '../../UiComponents/Btn';
 import './nav.scss';
 
 document.body.addEventListener('click', e => {
@@ -69,7 +69,7 @@ function Nav() {
 					</li>
 
 					<li className='nav-list__item'>
-						<BtnPrimary content='My Account' />
+						<BPrimary>My Account</BPrimary>
 					</li>
 				</ul>
 			</nav>

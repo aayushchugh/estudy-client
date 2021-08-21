@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.heading-primary {
+	font-family: 'Patrick Hand', cursive !important;
+	font-size: 3.75rem;
+	font-weight: 400;
+	color: $color-primary;
+	text-align: center;
+}
+
+.heading-secondary {
+	text-align: center !important;
+	font-size: 2rem !important;
+	font-weight: 400 !important;
+}

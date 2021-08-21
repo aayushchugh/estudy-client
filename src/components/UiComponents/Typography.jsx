@@ -1,16 +1,20 @@
 import React from 'react';
+import { Typography } from '@material-ui/core';
 
-const styles = {
-	fontFamily: "'Patrick Hand', cursive",
-};
+import './typography.scss';
 
-export function HPrimary(props) {
+export function HPrimary({ children, className }) {
 	return (
-		<h1
-			style={styles}
-			className={`text-6xl font-regular text-violet-800 text-center ${props.className}`}
-		>
-			{props.children}
-		</h1>
+		<Typography variant='h1' className={`heading-primary ${className}`}>
+			{children}
+		</Typography>
+	);
+}
+
+export function HSecondary({ className, children }) {
+	return (
+		<Typography variant='h2' className={`heading-secondary ${className}`}>
+			{children}
+		</Typography>
 	);
 }

@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&__icon {
+		height: 7rem;
+		width: 7rem;
+		background-color: $color-primary-light;
+		padding: 1.5rem;
+		border-radius: $border-radius-sm;
+		cursor: pointer;
+		transition: all 0.5s;
+
+		&:hover {
+			transform: scale(1.2);
+		}
+
+		svg {
+			fill: $color-primary;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&__text {
+		margin-top: 1rem !important;
+		font-size: 1.5rem !important;
+	}
+}

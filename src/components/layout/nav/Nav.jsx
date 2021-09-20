@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { ExpandMore } from '@mui/icons-material';
 import { BPrimary } from '../../UiComponents/Btn';
+
 import './nav.scss';
 
 document.body.addEventListener('click', e => {
@@ -32,16 +33,7 @@ function Nav() {
 					<li onClick={clickHandler} className='nav-list__item'>
 						<div>
 							<p>Study Material</p>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								height='24px'
-								viewBox='0 0 24 24'
-								width='24px'
-								fill='#000000'
-							>
-								<path d='M24 24H0V0h24v24z' fill='none' opacity='.87' />
-								<path d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z' />
-							</svg>
+							<ExpandMore />
 						</div>
 
 						<ul className='hidden nav-dropdown'>
@@ -51,16 +43,7 @@ function Nav() {
 					<li onClick={clickHandler} className='nav-list__item'>
 						<div>
 							<p>Study Material</p>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								height='24px'
-								viewBox='0 0 24 24'
-								width='24px'
-								fill='#000000'
-							>
-								<path d='M24 24H0V0h24v24z' fill='none' opacity='.87' />
-								<path d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z' />
-							</svg>
+							<ExpandMore />
 						</div>
 
 						<ul className='hidden nav-dropdown'>

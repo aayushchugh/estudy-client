@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { Typography } from '@mui/material';
 
 import './typography.scss';
 
@@ -11,7 +11,7 @@ export function HPrimary({ children, className }) {
 	);
 }
 
-export function HSecondary({ className, children }) {
+export function PPrimary({ className, children }) {
 	return (
 		<Typography variant='h2' className={`heading-secondary ${className}`}>
 			{children}

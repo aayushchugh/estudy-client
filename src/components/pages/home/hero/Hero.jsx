@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HPrimary, HSecondary } from '../../../UiComponents/Typography';
+import { HPrimary, PPrimary } from '../../../UiComponents/Typography';
 import { BPrimary } from '../../../UiComponents/Btn';
 
 import './hero.scss';
@@ -17,9 +17,9 @@ function Hero() {
 					We make Learning fun, <br /> Easy for all <br /> “Completely free”
 				</HPrimary>
 
-				<HSecondary className='hero-section__sub-heading'>
+				<PPrimary className='hero-section__sub-heading'>
 					A single solution to all school needs
-				</HSecondary>
+				</PPrimary>
 
 				<BPrimary className='hero-section__btn mt-5 mr-12'>
 					Explore &rarr;

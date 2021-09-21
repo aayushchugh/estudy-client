@@ -8,7 +8,7 @@ import {
 
 import { HPrimary } from '../../../UiComponents/Typography';
 import { BPrimary } from '../../../UiComponents/Btn';
-import Card from '../../../UiComponents/Card';
+import { CardIcon } from '../../../UiComponents/Card';
 import './features.scss';
 
 export default function Features() {
@@ -19,21 +19,21 @@ export default function Features() {
 
 				{/* cards */}
 				<div className='feature-section__grid'>
-					<Card className='feature-section__card' icon={<CardGiftcard />}>
+					<CardIcon className='feature-section__card' icon={<CardGiftcard />}>
 						Free access <br /> to everything
-					</Card>
+					</CardIcon>
 
-					<Card className='feature-section__card' icon={<FileCopy />}>
+					<CardIcon className='feature-section__card' icon={<FileCopy />}>
 						One Page <br /> Notes
-					</Card>
+					</CardIcon>
 
-					<Card className='feature-section__card' icon={<MenuBook />}>
+					<CardIcon className='feature-section__card' icon={<MenuBook />}>
 						Previous Year <br /> Solved Questions
-					</Card>
+					</CardIcon>
 
-					<Card className='feature-section__card' icon={<Lightbulb />}>
+					<CardIcon className='feature-section__card' icon={<Lightbulb />}>
 						Easy To <br /> Remember
-					</Card>
+					</CardIcon>
 				</div>
 				<BPrimary className='feature-section__btn'>Explore &rarr;</BPrimary>
 			</div>

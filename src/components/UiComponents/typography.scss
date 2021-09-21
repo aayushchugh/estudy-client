@@ -9,6 +9,14 @@
 }
 
 .heading-secondary {
+	text-transform: uppercase !important;
+	font-family: 'Poppins', sans-serif !important;
+	font-weight: 600 !important;
+	color: #fff !important;
+	-webkit-text-stroke: 1px $color-primary;
+}
+
+.para-primary {
 	text-align: center !important;
 	font-size: 2rem !important;
 	font-weight: 400 !important;

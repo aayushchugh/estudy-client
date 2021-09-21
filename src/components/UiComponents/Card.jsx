@@ -1,15 +1,22 @@
 import React from 'react';
 
-import { PPrimary } from './Typography';
+import { HSecondary, PPrimary } from './Typography';
 import './card.scss';
 
-function Card({ className, icon, children }) {
+export function CardIcon({ className, icon, children }) {
 	return (
-		<div className={`${className} card`}>
-			<div className='card__icon'>{icon}</div>
-			<PPrimary className='card__text'>{children}</PPrimary>
+		<div className={`${className} card-icon`}>
+			<div className='card-icon__img'>{icon}</div>
+			<PPrimary className='card-icon__text'>{children}</PPrimary>
 		</div>
 	);
 }
 
-export default Card;
+export function CardHeading({ className, heading, para }) {
+	return (
+		<div className={`${className} card-heading`}>
+			<HSecondary className='card-heading__heading'>{heading}</HSecondary>
+			<PPrimary className='card-heading__para'>{para}</PPrimary>
+		</div>
+	);
+}

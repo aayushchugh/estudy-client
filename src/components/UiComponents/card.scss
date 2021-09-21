@@ -1,12 +1,12 @@
 @import '../../styles/variables';
 
-.card {
+.card-icon {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 
-	&__icon {
+	&__img {
 		height: 7rem;
 		width: 7rem;
 		background-color: $color-primary-light;
@@ -29,5 +29,23 @@
 	&__text {
 		margin-top: 1rem !important;
 		font-size: 1.5rem !important;
+	}
+}
+
+.card-heading {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 3.5rem;
+	background-color: $color-white;
+	width: fit-content;
+	border-radius: $border-radius-md;
+	box-shadow: $shadow-secondary;
+
+	&__para {
+		font-size: 1.5rem !important;
+		text-align: left !important;
+		width: 40ch;
+		margin-top: 1.5rem !important;
 	}
 }

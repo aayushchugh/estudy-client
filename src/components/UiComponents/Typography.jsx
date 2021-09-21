@@ -11,9 +11,20 @@ export function HPrimary({ children, className }) {
 	);
 }
 
-export function PPrimary({ className, children }) {
+export function HSecondary({ children, className }) {
 	return (
 		<Typography variant='h2' className={`heading-secondary ${className}`}>
+			{children}
+		</Typography>
+	);
+}
+
+export function PPrimary({ className, children }) {
+	return (
+		<Typography
+			variant='subtitle1'
+			className={`para-primary ${className}`}
+		>
 			{children}
 		</Typography>
 	);

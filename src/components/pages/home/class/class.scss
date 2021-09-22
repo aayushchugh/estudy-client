@@ -3,16 +3,7 @@
 .class-section {
 	margin-top: 10rem;
 	padding: 4rem 8rem;
-	background-color: $color-secondary-light;
-
-	&__card {
-		cursor: pointer;
-		transition: all 0.5s;
-
-		&:hover {
-			transform: scale(1.05);
-		}
-	}
+	background-color: $color-secondary-light-1;
 
 	&__class {
 		margin-top: 5rem;

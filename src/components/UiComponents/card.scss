@@ -16,7 +16,7 @@
 		transition: all 0.5s;
 
 		&:hover {
-			transform: scale(1.2);
+			transform: scale(1.1) translateY(-0.5rem);
 		}
 
 		svg {
@@ -41,11 +41,35 @@
 	width: fit-content;
 	border-radius: $border-radius-md;
 	box-shadow: $shadow-secondary;
+	cursor: pointer;
+	transition: all 0.5s;
+
+	&:hover {
+		transform: scale(1.05) translateY(-0.5rem);
+	}
 
 	&__para {
 		font-size: 1.5rem !important;
 		text-align: left !important;
 		width: 40ch;
 		margin-top: 1.5rem !important;
+	}
+}
+
+.card-para {
+	background-color: $color-white;
+	box-shadow: $shadow-secondary;
+	border-radius: $border-radius-sm;
+	padding: 2rem;
+	width: 70ch;
+	cursor: pointer;
+	transition: all 0.5s;
+
+	&:hover {
+		transform: scale(1.05) translateY(-0.5rem);
+	}
+
+	&__para {
+		text-align: left !important;
 	}
 }

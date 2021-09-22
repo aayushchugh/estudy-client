@@ -6,9 +6,15 @@
 	font-weight: 400;
 	color: $color-primary-dark;
 	text-align: center;
+	text-shadow: $shadow-primary !important;
 }
 
 .heading-secondary {
+	font-size: 3rem !important;
+	font-weight: 400 !important;
+}
+
+.heading-tertiary {
 	text-transform: uppercase !important;
 	font-family: 'Poppins', sans-serif !important;
 	font-weight: 600 !important;

@@ -1,0 +1,34 @@
+@import '../../../../styles/variables';
+
+.testimonial-section {
+	padding: 0 8rem;
+	margin-top: 10rem;
+
+	&__testimonials-container {
+		display: grid;
+		grid-gap: 5rem;
+		justify-items: center;
+		grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+		margin-top: 5rem;
+	}
+
+	&__stars {
+		margin-top: 2rem !important;
+	}
+
+	&__star {
+		stroke: $color-primary !important;
+
+		&--filled {
+			fill: $color-primary !important;
+		}
+
+		&--unfilled {
+			fill: $color-secondary-light-2 !important;
+		}
+	}
+
+	&__name {
+		margin-top: 2rem;
+	}
+}

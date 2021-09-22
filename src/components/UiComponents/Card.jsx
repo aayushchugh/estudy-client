@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HSecondary, PPrimary } from './Typography';
+import { HSecondary, HTertiary, PPrimary } from './Typography';
 import './card.scss';
 
 export function CardIcon({ className, icon, children }) {
@@ -15,8 +15,16 @@ export function CardIcon({ className, icon, children }) {
 export function CardHeading({ className, heading, para }) {
 	return (
 		<div className={`${className} card-heading`}>
-			<HSecondary className='card-heading__heading'>{heading}</HSecondary>
+			<HTertiary className='card-heading__heading'>{heading}</HTertiary>
 			<PPrimary className='card-heading__para'>{para}</PPrimary>
+		</div>
+	);
+}
+
+export function CardPara({ className, para }) {
+	return (
+		<div className={`${className} card-para`}>
+			<PPrimary className={`card-para__para`}>{para}</PPrimary>
 		</div>
 	);
 }

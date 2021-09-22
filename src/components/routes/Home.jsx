@@ -3,6 +3,7 @@ import Hero from '../pages/home/hero/Hero';
 import Features from '../pages/home/features/Features';
 import About from '../pages/home/about/About';
 import Class from '../pages/home/class/Class';
+import Testimonials from '../pages/home/testimonials/Testimonials';
 
 function Home() {
 	return (
@@ -11,6 +12,7 @@ function Home() {
 			<Features />
 			<About />
 			<Class />
+			<Testimonials />
 		</main>
 	);
 }

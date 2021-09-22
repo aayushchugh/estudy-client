@@ -4,6 +4,7 @@ import Features from '../pages/home/features/Features';
 import About from '../pages/home/about/About';
 import Class from '../pages/home/class/Class';
 import Testimonials from '../pages/home/testimonials/Testimonials';
+import Connect from '../pages/home/connect/Connect';
 
 function Home() {
 	return (
@@ -13,6 +14,7 @@ function Home() {
 			<About />
 			<Class />
 			<Testimonials />
+			<Connect />
 		</main>
 	);
 }

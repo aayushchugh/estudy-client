@@ -1,0 +1,36 @@
+@import '../../../../styles/variables';
+
+.connect-section {
+	margin-top: 10rem;
+	padding: 0 8rem;
+
+	&__container {
+		display: flex;
+		justify-content: space-evenly;
+		margin-top: 5rem;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	&-form {
+		box-shadow: $shadow-secondary;
+		padding: 3rem;
+
+		&__heading {
+			margin-bottom: 2rem !important;
+		}
+
+		&__input {
+			margin-bottom: 3rem !important;
+
+			label {
+				background-color: $color-white;
+			}
+		}
+	}
+}

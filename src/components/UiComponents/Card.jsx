@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HSecondary, HTertiary, PPrimary } from './Typography';
+import { HTertiary, PPrimary } from './Typography';
 import './card.scss';
 
 export function CardIcon({ className, icon, children }) {

@@ -34,3 +34,8 @@ body {
 ::-webkit-scrollbar-thumb:active {
 	background-color: #6b5eb2c7;
 }
+
+::selection {
+	background-color: #6a5eb2;
+	color: #fff;
+}

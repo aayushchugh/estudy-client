@@ -11,6 +11,7 @@ import Nav from './components/layout/nav/Nav';
 import Footer from './components/layout/footer/Footer';
 
 import Home from './components/routes/Home';
+import Login from './components/routes/Login';
 import NotFound from './components/pages/NotFound';
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
 				<Switch>
 					<Route path='/' exact>
 						<Home />
+					</Route>
+					<Route path='/login' exact>
+						<Login />
 					</Route>
 					<Route path='/404' exact>
 						<NotFound />

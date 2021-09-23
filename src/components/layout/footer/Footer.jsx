@@ -9,11 +9,14 @@ import {
 
 import { PPrimary } from '../../UiComponents/Typography';
 import './footer.scss';
+import { Link } from 'react-router-dom';
 function Footer() {
 	return (
 		<footer className='footer'>
 			<div className='footer__left'>
-				<img className='footer__logo' src='/images/logo.png' alt='logo' />
+				<Link to='/'>
+					<img className='footer__logo' src='/images/logo.png' alt='logo' />
+				</Link>
 
 				<PPrimary className='footer__para'>
 					We are here to give a different perspective on the pattern of

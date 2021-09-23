@@ -21,9 +21,9 @@ function Hero() {
 					A single solution to all school needs
 				</PPrimary>
 
-				<BPrimary className='hero-section__btn mt-5 mr-12'>
-					Explore &rarr;
-				</BPrimary>
+				<a className='hero-section__btn' href='#class-section'>
+					<BPrimary>Explore &rarr;</BPrimary>
+				</a>
 			</div>
 		</section>
 	);

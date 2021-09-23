@@ -19,8 +19,9 @@ function About() {
 					designed from Student point of view, to now just cater knowledge, but
 					also interest.
 				</PPrimary>
-
-				<BPrimary className='about-section__btn'>Explore &rarr; </BPrimary>
+				<a href='#class-section' className='about-section__btn'>
+					<BPrimary>Explore &rarr; </BPrimary>
+				</a>
 			</div>
 		</section>
 	);

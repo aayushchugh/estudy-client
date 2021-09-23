@@ -35,7 +35,9 @@ export default function Features() {
 						Easy To <br /> Remember
 					</CardIcon>
 				</div>
-				<BPrimary className='feature-section__btn'>Explore &rarr;</BPrimary>
+				<a className='feature-section__btn' href='#class-section'>
+					<BPrimary>Explore &rarr;</BPrimary>
+				</a>
 			</div>
 			<div className='feature-section__img'>
 				<img src='/images/illustrations/features.svg' alt='background' />

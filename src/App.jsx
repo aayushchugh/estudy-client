@@ -12,6 +12,7 @@ import Footer from './components/layout/footer/Footer';
 
 import Home from './components/routes/Home';
 import Login from './components/routes/Login';
+import Signup from './components/routes/Signup';
 import NotFound from './components/pages/NotFound';
 
 function App() {
@@ -24,9 +25,15 @@ function App() {
 					<Route path='/' exact>
 						<Home />
 					</Route>
+
 					<Route path='/login' exact>
 						<Login />
 					</Route>
+
+					<Route path='/signup' exact>
+						<Signup />
+					</Route>
+
 					<Route path='/404' exact>
 						<NotFound />
 					</Route>

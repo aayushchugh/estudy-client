@@ -1,7 +1,6 @@
 import React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 
-
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -9,6 +8,8 @@ import {
 	Redirect,
 } from 'react-router-dom';
 import Nav from './components/layout/nav/Nav';
+import Footer from './components/layout/footer/Footer';
+
 import Home from './components/routes/Home';
 import NotFound from './components/pages/NotFound';
 
@@ -28,6 +29,7 @@ function App() {
 
 					<Redirect to='/404' />
 				</Switch>
+				<Footer />
 			</Router>
 		</>
 	);

@@ -1,0 +1,78 @@
+@import '../../../styles/variables';
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	background-color: $color-secondary-light-1;
+	padding: 3rem 8rem;
+
+	/* ---------------------------------- left ---------------------------------- */
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__logo {
+		height: 10rem;
+		width: 10rem;
+	}
+
+	&__para {
+		width: 40ch;
+		text-align: left !important;
+	}
+
+	/* ----------------------------------- mid ---------------------------------- */
+
+	&__nav {
+		list-style: none;
+
+		&-item {
+			font-size: 2rem;
+			cursor: pointer;
+			transition: all 0.3s;
+
+			&:hover {
+				color: $color-primary;
+				transform: translateY(-0.2rem);
+				text-shadow: $shadow-primary;
+			}
+
+			&:not(:last-of-type) {
+				margin-bottom: 2rem;
+			}
+
+			&::before {
+				content: '>';
+				margin-right: 1rem;
+			}
+		}
+	}
+
+	/* ---------------------------------- right --------------------------------- */
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		svg {
+			height: 3rem;
+			width: 3rem;
+			cursor: pointer;
+			transition: all 0.3s;
+
+			&:hover {
+				fill: $color-primary;
+				transform: translateY(-0.2rem);
+				text-shadow: $shadow-primary;
+			}
+
+			&:not(:last-of-type) {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+}

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import { TextField } from '@mui/material';
 
@@ -8,9 +9,37 @@ import { BPrimary } from '../../UiComponents/Btn';
 import './form.scss';
 
 function Form() {
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [confirmPassword, setConfirmPassword] = useState('');
+
+	const handleForm = async e => {
+		e.preventDefault();
+
+		// todo: show alert element if password and confirm password do not match
+
+		if (password === confirmPassword) {
+			const response = await axios.post(
+				`${process.env.REACT_APP_API_URL}/signup`,
+				{
+					name: name,
+					email: email,
+					password: password,
+				}
+			);
+
+			if ((response.data.status = '201')) {
+				window.location = '/login';
+			}
+		} else {
+			alert('password do not match');
+		}
+	};
+
 	return (
 		<section className='signup-section'>
-			<form className='form'>
+			<form className='form' onSubmit={handleForm}>
 				<HSecondary className='form__heading'>Signup</HSecondary>
 
 				<TextField
@@ -21,6 +50,7 @@ function Form() {
 					inputProps={{ style: { fontSize: 20 } }}
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
+					onChange={e => setName(e.target.value)}
 				/>
 
 				<TextField
@@ -31,6 +61,7 @@ function Form() {
 					inputProps={{ style: { fontSize: 20 } }}
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
+					onChange={e => setEmail(e.target.value)}
 				/>
 
 				<TextField
@@ -41,6 +72,7 @@ function Form() {
 					inputProps={{ style: { fontSize: 20 } }}
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
+					onChange={e => setPassword(e.target.value)}
 				/>
 
 				<TextField
@@ -51,9 +83,10 @@ function Form() {
 					inputProps={{ style: { fontSize: 20 } }}
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
+					onChange={e => setConfirmPassword(e.target.value)}
 				/>
 
-				<BPrimary>Signup &rarr;</BPrimary>
+				<BPrimary type='submit'>Signup &rarr;</BPrimary>
 			</form>
 
 			<h2 className='signup-section__heading'>

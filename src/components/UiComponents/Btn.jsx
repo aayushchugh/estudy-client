@@ -3,9 +3,13 @@ import { Button } from '@mui/material';
 
 import './btn.scss';
 
-export function BPrimary({ children, className }) {
+export function BPrimary({ children, className, type }) {
 	return (
-		<Button variant='contained' className={`btn-primary ${className}`}>
+		<Button
+			variant='contained'
+			type={type}
+			className={`btn-primary ${className}`}
+		>
 			{children}
 		</Button>
 	);

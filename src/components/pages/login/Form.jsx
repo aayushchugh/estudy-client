@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import { TextField } from '@mui/material';
 
@@ -8,20 +9,33 @@ import { BPrimary } from '../../UiComponents/Btn';
 import './form.scss';
 
 function Form() {
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+	const handleForm = async e => {
+		e.preventDefault();
+
+		const response = await axios.post(
+			`${process.env.REACT_APP_API_URL}/login`,
+			{
+				email: email,
+				password: password,
+			}
+		);
+
+		if (response.data.status === 200) {
+			localStorage.setItem('token', response.data.token);
+			alert('logged in');
+		} else {
+			alert('not logged in');
+		}
+
+	};
+
 	return (
 		<section className='login-section'>
-			<form className='form'>
+			<form className='form' onSubmit={handleForm}>
 				<HSecondary className='form__heading'>Login</HSecondary>
-
-				<TextField
-					className='form__input'
-					variant='outlined'
-					label='Name'
-					type='text'
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
-					fullWidth
-				/>
 
 				<TextField
 					className='form__input'
@@ -31,6 +45,7 @@ function Form() {
 					inputProps={{ style: { fontSize: 20 } }}
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
+					onChange={e => setEmail(e.target.value)}
 				/>
 
 				<TextField
@@ -41,9 +56,10 @@ function Form() {
 					inputProps={{ style: { fontSize: 20 } }}
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
+					onChange={e => setPassword(e.target.value)}
 				/>
 
-				<BPrimary>Login &rarr;</BPrimary>
+				<BPrimary type='submit'>Login &rarr;</BPrimary>
 			</form>
 
 			<h2 className='login-section__heading'>

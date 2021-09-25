@@ -14,6 +14,7 @@ import Home from './components/routes/Home';
 import Login from './components/routes/Login';
 import Signup from './components/routes/Signup';
 import NotFound from './components/pages/NotFound';
+import Content from './components/routes/content';
 
 function App() {
 	return (
@@ -25,6 +26,10 @@ function App() {
 					<Route path='/' exact>
 						<Home />
 					</Route>
+
+          <Route path='/content' exact>
+              <Content/>
+          </Route>
 
 					<Route path='/login' exact>
 						<Login />

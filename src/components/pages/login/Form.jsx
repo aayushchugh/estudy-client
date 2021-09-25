@@ -6,6 +6,8 @@ import { TextField } from '@mui/material';
 
 import { HSecondary } from '../../UiComponents/Typography';
 import { BPrimary } from '../../UiComponents/Btn';
+import { Error } from '../../UiComponents/Alerts';
+
 import './form.scss';
 
 function Form() {
@@ -25,11 +27,19 @@ function Form() {
 
 		if (response.data.status === 200) {
 			localStorage.setItem('token', response.data.token);
-			alert('logged in');
 		} else {
-			alert('not logged in');
-		}
+			if (response.data.status === 400) {
+				document
+					.querySelector('.form__alert--incorrect-password')
+					.classList.remove('hidden');
+			}
 
+			if (response.data.status === 404) {
+				document
+					.querySelector('.form__alert--user-not-found')
+					.classList.remove('hidden');
+			}
+		}
 	};
 
 	return (
@@ -58,6 +68,14 @@ function Form() {
 					fullWidth
 					onChange={e => setPassword(e.target.value)}
 				/>
+
+				<Error className='form__alert form__alert--user-not-found hidden'>
+					User not found
+				</Error>
+
+				<Error className='form__alert form__alert--incorrect-password hidden'>
+					Incorrect Password
+				</Error>
 
 				<BPrimary type='submit'>Login &rarr;</BPrimary>
 			</form>

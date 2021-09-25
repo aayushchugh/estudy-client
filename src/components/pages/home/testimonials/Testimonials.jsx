@@ -14,7 +14,11 @@ function Testimonials() {
 			<HPrimary>Testimonials</HPrimary>
 			<div className='testimonial-section__testimonials-container'>
 				<div className='testimonial-section__testimonial'>
-					<CardPara para='Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur blanditiis harum.' />
+					<CardPara>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+						mollitia,molestiae quas vel sint commodi repudiandae consequuntur
+						blanditiis harum.
+					</CardPara>
 
 					<div className='testimonial-section__stars'>
 						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
@@ -28,7 +32,11 @@ function Testimonials() {
 				</div>
 
 				<div className='testimonial-section__testimonial'>
-					<CardPara para='Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur blanditiis harum.' />
+					<CardPara>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+						mollitia,molestiae quas vel sint commodi repudiandae consequuntur
+						blanditiis harum.
+					</CardPara>
 
 					<div className='testimonial-section__stars'>
 						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
@@ -42,7 +50,11 @@ function Testimonials() {
 				</div>
 
 				<div className='testimonial-section__testimonial'>
-					<CardPara para='Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur blanditiis harum.' />
+					<CardPara>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+						mollitia,molestiae quas vel sint commodi repudiandae consequuntur
+						blanditiis harum.
+					</CardPara>
 
 					<div className='testimonial-section__stars'>
 						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />

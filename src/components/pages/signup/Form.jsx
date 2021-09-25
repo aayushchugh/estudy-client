@@ -6,6 +6,7 @@ import { TextField } from '@mui/material';
 
 import { HSecondary } from '../../UiComponents/Typography';
 import { BPrimary } from '../../UiComponents/Btn';
+import { Error } from '../../UiComponents/Alerts';
 import './form.scss';
 
 function Form() {
@@ -16,8 +17,6 @@ function Form() {
 
 	const handleForm = async e => {
 		e.preventDefault();
-
-		// todo: show alert element if password and confirm password do not match
 
 		if (password === confirmPassword) {
 			const response = await axios.post(
@@ -33,7 +32,7 @@ function Form() {
 				window.location = '/login';
 			}
 		} else {
-			alert('password do not match');
+			document.querySelector('.form__alert').classList.remove('hidden');
 		}
 	};
 
@@ -85,6 +84,10 @@ function Form() {
 					fullWidth
 					onChange={e => setConfirmPassword(e.target.value)}
 				/>
+
+				<Error className='form__alert hidden'>
+					password and confirm password do not match
+				</Error>
 
 				<BPrimary type='submit'>Signup &rarr;</BPrimary>
 			</form>

@@ -21,10 +21,10 @@ export function CardHeading({ className, heading, para }) {
 	);
 }
 
-export function CardPara({ className, para }) {
+export function CardPara({ className, children }) {
 	return (
 		<div className={`${className} card-para`}>
-			<PPrimary className={`card-para__para`}>{para}</PPrimary>
+			<PPrimary className={`card-para__para`}>{children}</PPrimary>
 		</div>
 	);
 }

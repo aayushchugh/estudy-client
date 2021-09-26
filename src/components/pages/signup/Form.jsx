@@ -28,11 +28,17 @@ function Form() {
 				}
 			);
 
-			if ((response.data.status = '201')) {
+			if (response.data.status === 400) {
+				document
+					.querySelector('.form__alert--email-exists')
+					.classList.remove('hidden');
+			} else {
 				window.location = '/login';
 			}
 		} else {
-			document.querySelector('.form__alert').classList.remove('hidden');
+			document
+				.querySelector('.form__alert--password-not-match')
+				.classList.remove('hidden');
 		}
 	};
 
@@ -85,8 +91,12 @@ function Form() {
 					onChange={e => setConfirmPassword(e.target.value)}
 				/>
 
-				<Error className='form__alert hidden'>
+				<Error className='form__alert form__alert--password-not-match hidden'>
 					password and confirm password do not match
+				</Error>
+
+				<Error className='form__alert form__alert--email-exists hidden'>
+					Email already exists, please login
 				</Error>
 
 				<BPrimary type='submit'>Signup &rarr;</BPrimary>

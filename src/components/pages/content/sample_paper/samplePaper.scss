@@ -1,0 +1,35 @@
+@import '../../../../styles/variables';
+
+.chapter-name {
+	list-style-type: none;
+	font-size: 1.5rem;
+	margin: 1.5rem;
+  transition: all .3s;
+  &:hover{color: $color-primary;}
+}
+
+.section-notes {
+  padding: 0 8rem;
+  margin: 4rem 0rem;
+	&__background {
+    width: 80%;
+    margin-top: 2rem;
+    padding: 2rem;
+		&:hover {
+			transform: none !important;
+		}
+	}
+
+	&__tabs > div > span {
+		background-color: $color-primary !important;
+	}
+
+	&__tab {
+		color: $color-primary !important;
+		font-size: 1.5rem !important;
+	}
+  ul{
+    margin-top: 4rem;
+  }
+  
+}

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import StarIcon from '@mui/icons-material/Star';
 
 import {
@@ -9,63 +11,53 @@ import { CardPara } from '../../../UiComponents/Card';
 import './testimonials.scss';
 
 function Testimonials() {
+	const [apiData, setApiData] = useState([]);
+
+	useEffect(() => {
+		axios
+			.get(`${process.env.REACT_APP_API_URL}/testimonial/all-testimonials`)
+			.then(data => {
+				setApiData(data.data.data);
+			});
+	}, []);
+
 	return (
 		<section className='testimonial-section'>
 			<HPrimary>Testimonials</HPrimary>
 			<div className='testimonial-section__testimonials-container'>
-				<div className='testimonial-section__testimonial'>
-					<CardPara>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-						mollitia,molestiae quas vel sint commodi repudiandae consequuntur
-						blanditiis harum.
-					</CardPara>
+				{apiData.map(testimonial => (
+					<div
+						className='testimonial-section__testimonial'
+						key={testimonial._id}
+					>
+						<CardPara>{testimonial.content}</CardPara>
 
-					<div className='testimonial-section__stars'>
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
+						<div className='testimonial-section__stars'>
+							{[...Array(Number(5)).keys()].map(el => (
+								<>
+									{el < Number(testimonial.rating) ? (
+										<>
+											<StarIcon
+												key={el}
+												className='testimonial-section__star testimonial-section__star--filled'
+											/>
+											{console.log('if')}
+										</>
+									) : (
+										<StarIcon
+											key={el}
+											className='testimonial-section__star testimonial-section__star--unfilled'
+										/>
+									)}
+								</>
+							))}
+						</div>
+
+						<HSecondary className='testimonial-section__name'>
+							{testimonial.name}
+						</HSecondary>
 					</div>
-
-					<HSecondary className='testimonial-section__name'>Bhavya</HSecondary>
-				</div>
-
-				<div className='testimonial-section__testimonial'>
-					<CardPara>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-						mollitia,molestiae quas vel sint commodi repudiandae consequuntur
-						blanditiis harum.
-					</CardPara>
-
-					<div className='testimonial-section__stars'>
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--unfilled' />
-					</div>
-
-					<HSecondary className='testimonial-section__name'>Ayush</HSecondary>
-				</div>
-
-				<div className='testimonial-section__testimonial'>
-					<CardPara>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-						mollitia,molestiae quas vel sint commodi repudiandae consequuntur
-						blanditiis harum.
-					</CardPara>
-
-					<div className='testimonial-section__stars'>
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--filled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--unfilled' />
-						<StarIcon className='testimonial-section__star testimonial-section__star--unfilled' />
-					</div>
-
-					<HSecondary className='testimonial-section__name'>Arpit</HSecondary>
-				</div>
+				))}
 			</div>
 		</section>
 	);

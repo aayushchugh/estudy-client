@@ -21,6 +21,7 @@ function Testimonials() {
 			});
 	}, []);
 
+
 	return (
 		<section className='testimonial-section'>
 			<HPrimary>Testimonials</HPrimary>
@@ -33,15 +34,13 @@ function Testimonials() {
 						<CardPara>{testimonial.content}</CardPara>
 
 						<div className='testimonial-section__stars'>
-							{[...Array(Number(5)).keys()].map(el => (
+							{[...Array(5).keys()].map(el => (
 								<>
 									{el < Number(testimonial.rating) ? (
-										<>
 											<StarIcon
 												key={el}
 												className='testimonial-section__star testimonial-section__star--filled'
 											/>
-										</>
 									) : (
 										<StarIcon
 											key={el}

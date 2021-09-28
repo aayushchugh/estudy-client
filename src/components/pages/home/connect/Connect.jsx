@@ -10,7 +10,7 @@ import './connect.scss';
 
 function Connect() {
 	const [name, setName] = useState('');
-	const [email, setEmail] = useState('initialState');
+	const [email, setEmail] = useState('');
 	const [userClass, setUserClass] = useState('');
 
 	const submitHandler = e => {
@@ -44,6 +44,10 @@ function Connect() {
 						.querySelector('.connect-section-form__alert--error-fake')
 						.classList.remove('hidden');
 				}
+
+				setName('');
+				setEmail('');
+				setUserClass('');
 			});
 	};
 
@@ -84,6 +88,7 @@ function Connect() {
 							inputProps={{ style: { fontSize: 20 } }}
 							InputLabelProps={{ style: { fontSize: 20 } }}
 							onChange={e => setName(e.target.value)}
+							value={name}
 							fullWidth
 						/>
 
@@ -95,6 +100,7 @@ function Connect() {
 							inputProps={{ style: { fontSize: 20 } }}
 							InputLabelProps={{ style: { fontSize: 20 } }}
 							onChange={e => setEmail(e.target.value)}
+							value={email}
 							fullWidth
 						/>
 
@@ -106,6 +112,7 @@ function Connect() {
 							inputProps={{ style: { fontSize: 20 } }}
 							InputLabelProps={{ style: { fontSize: 20 } }}
 							onChange={e => setUserClass(e.target.value)}
+							value={userClass}
 							fullWidth
 						/>
 

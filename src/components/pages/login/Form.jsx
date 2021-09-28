@@ -6,7 +6,7 @@ import { TextField } from '@mui/material';
 
 import { HSecondary } from '../../UiComponents/Typography';
 import { BPrimary } from '../../UiComponents/Btn';
-import { Error } from '../../UiComponents/Alerts';
+import { AError } from '../../UiComponents/Alerts';
 
 import './form.scss';
 
@@ -69,13 +69,13 @@ function Form() {
 					onChange={e => setPassword(e.target.value)}
 				/>
 
-				<Error className='form__alert form__alert--user-not-found hidden'>
+				<AError className='form__alert form__alert--user-not-found hidden'>
 					User not found
-				</Error>
+				</AError>
 
-				<Error className='form__alert form__alert--incorrect-password hidden'>
+				<AError className='form__alert form__alert--incorrect-password hidden'>
 					Incorrect Password
-				</Error>
+				</AError>
 
 				<BPrimary type='submit'>Login &rarr;</BPrimary>
 			</form>

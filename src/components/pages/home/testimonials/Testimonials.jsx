@@ -41,7 +41,6 @@ function Testimonials() {
 												key={el}
 												className='testimonial-section__star testimonial-section__star--filled'
 											/>
-											{console.log('if')}
 										</>
 									) : (
 										<StarIcon

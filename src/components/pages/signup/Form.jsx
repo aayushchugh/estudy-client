@@ -6,7 +6,7 @@ import { TextField } from '@mui/material';
 
 import { HSecondary } from '../../UiComponents/Typography';
 import { BPrimary } from '../../UiComponents/Btn';
-import { Error } from '../../UiComponents/Alerts';
+import { AError } from '../../UiComponents/Alerts';
 import './form.scss';
 
 function Form() {
@@ -91,13 +91,13 @@ function Form() {
 					onChange={e => setConfirmPassword(e.target.value)}
 				/>
 
-				<Error className='form__alert form__alert--password-not-match hidden'>
+				<AError className='form__alert form__alert--password-not-match hidden'>
 					password and confirm password do not match
-				</Error>
+				</AError>
 
-				<Error className='form__alert form__alert--email-exists hidden'>
+				<AError className='form__alert form__alert--email-exists hidden'>
 					Email already exists, please login
-				</Error>
+				</AError>
 
 				<BPrimary type='submit'>Signup &rarr;</BPrimary>
 			</form>

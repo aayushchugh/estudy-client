@@ -21,6 +21,10 @@
 		box-shadow: $shadow-secondary;
 		padding: 3rem;
 
+		&__alert {
+			margin: 2rem 0;
+		}
+
 		&__heading {
 			margin-bottom: 2rem !important;
 		}

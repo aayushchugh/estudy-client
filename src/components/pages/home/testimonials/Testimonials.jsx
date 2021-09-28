@@ -15,12 +15,11 @@ function Testimonials() {
 
 	useEffect(() => {
 		axios
-			.get(`${process.env.REACT_APP_API_URL}/testimonial/all-testimonials`)
+			.get(`${process.env.REACT_APP_API_URL}/testimonial/get-all`)
 			.then(data => {
 				setApiData(data.data.data);
 			});
 	}, []);
-
 
 	return (
 		<section className='testimonial-section'>
@@ -37,10 +36,10 @@ function Testimonials() {
 							{[...Array(5).keys()].map(el => (
 								<>
 									{el < Number(testimonial.rating) ? (
-											<StarIcon
-												key={el}
-												className='testimonial-section__star testimonial-section__star--filled'
-											/>
+										<StarIcon
+											key={el}
+											className='testimonial-section__star testimonial-section__star--filled'
+										/>
 									) : (
 										<StarIcon
 											key={el}

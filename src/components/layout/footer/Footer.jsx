@@ -26,10 +26,12 @@ function Footer() {
 
 			<nav className='footer__mid'>
 				<ul className='footer__nav'>
+					<li className='footer__nav-item'>
+						<Link to='/contact-us'>Contact us</Link>
+					</li>
 					<li className='footer__nav-item'>About us</li>
 					<li className='footer__nav-item'>Privacy Policy</li>
 					<li className='footer__nav-item'>Terms of Service</li>
-					<li className='footer__nav-item'>Contact us</li>
 				</ul>
 			</nav>
 

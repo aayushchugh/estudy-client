@@ -34,6 +34,11 @@
 			cursor: pointer;
 			transition: all 0.3s;
 
+			a {
+				text-decoration: none;
+				color: currentColor;
+			}
+
 			&:hover {
 				color: $color-primary;
 				transform: translateY(-0.2rem);

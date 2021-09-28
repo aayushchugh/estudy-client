@@ -15,6 +15,7 @@ import Login from './components/routes/Login';
 import Signup from './components/routes/Signup';
 import NotFound from './components/pages/NotFound';
 import Content from './components/routes/content';
+import ContactUs from './components/routes/ContactUs';
 
 function App() {
 	return (
@@ -27,9 +28,9 @@ function App() {
 						<Home />
 					</Route>
 
-          <Route path='/content' exact>
-              <Content/>
-          </Route>
+					<Route path='/content' exact>
+						<Content />
+					</Route>
 
 					<Route path='/login' exact>
 						<Login />
@@ -37,6 +38,10 @@ function App() {
 
 					<Route path='/signup' exact>
 						<Signup />
+					</Route>
+
+					<Route path='/contact-us' exact>
+						<ContactUs />
 					</Route>
 
 					<Route path='/404' exact>

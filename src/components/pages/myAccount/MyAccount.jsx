@@ -11,37 +11,113 @@ import {
 
 import { HSecondary } from '../../UiComponents/Typography';
 import { BPrimary } from '../../UiComponents/Btn';
+import { MPrimary } from '../../UiComponents/Modal';
+import { AError, ASuccess } from '../../UiComponents/Alerts';
 
 import './myAccount.scss';
+import axios from 'axios';
 
 function MyAccount() {
 	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
 	const [userClass, setUserClass] = useState('');
-	const [formClass, setFormClass] = useState('');
 	const [password, setPassword] = useState('');
+	let [resetPassword, setResetPassword] = useState('');
+	const [id, setId] = useState('');
+	const [open, setOpen] = useState(false);
+	const [submit, setSubmit] = useState(false);
 
 	useEffect(() => {
 		const token = jwt.decode(localStorage.getItem('token'));
 
 		if (!token) return (window.location = '/login');
 
-		const nameFromToken = token.name;
-		const emailFromToken = token.email;
-		const classFromToken = token.class;
+		setName(token.name);
+		setUserClass(token.class);
+		setId(token.id);
 
-		setName(nameFromToken);
-		setEmail(emailFromToken);
-		setUserClass(classFromToken);
-	}, []);
+		setSubmit(false);
+	}, [submit]);
 
 	const logoutHandler = () => {
 		localStorage.removeItem('token');
 		window.location = '/';
 	};
 
+	const submitHandler = id => {
+		return () => {
+			const updatePassword =
+				resetPassword === ''
+					? (resetPassword = undefined)
+					: // eslint-disable-next-line
+					  (resetPassword = resetPassword);
+
+			axios
+				.patch(`${process.env.REACT_APP_API_URL}/users/update/${id}`, {
+					name: name,
+					userClass: userClass,
+					userPassword: password,
+					updatePassword: updatePassword,
+				})
+				.then(data => {
+					setSubmit(true);
+					setOpen(false);
+
+					if (data.data.status === 204) {
+						localStorage.setItem('token', data.data.token);
+
+						document
+							.querySelector('.my-account-section__alert--success')
+							.classList.remove('hidden');
+					} else if (data.data.status === 400) {
+						document
+							.querySelector('.my-account-section__alert--error')
+							.classList.remove('hidden');
+					}
+				});
+		};
+	};
+
 	return (
 		<section className='my-account-section'>
+			{/* modal */}
+			<MPrimary
+				className='my-account-section-modal'
+				open={open}
+				setOpen={setOpen}
+			>
+				<div className='my-account-section-modal__box'>
+					<TextField
+						variant='outlined'
+						label='password'
+						type='password'
+						value={password}
+						className='my-account-section-modal__input'
+						onChange={e => setPassword(e.target.value)}
+						inputProps={{ style: { fontSize: 20 } }}
+						InputLabelProps={{ style: { fontSize: 20 } }}
+						fullWidth
+					/>
+
+					<BPrimary
+						onClick={submitHandler(id)}
+						className='my-account-section-modal__btn'
+					>
+						Save
+					</BPrimary>
+				</div>
+			</MPrimary>
+
+			{/* alerts */}
+
+			<ASuccess className='my-account-section__alert my-account-section__alert--success hidden'>
+				successfully saved
+			</ASuccess>
+
+			<AError className='my-account-section__alert my-account-section__alert--error hidden'>
+				Incorrect password
+			</AError>
+
+			{/* top */}
 			<div className='my-account-section-top'>
 				<HSecondary className='my-account-section-top__name'>{name}</HSecondary>
 
@@ -57,6 +133,7 @@ function MyAccount() {
 				</HSecondary>
 			</div>
 
+			{/* bottom */}
 			<div className='my-account-section-bottom'>
 				<form className='my-account-section-form'>
 					<div>
@@ -82,9 +159,9 @@ function MyAccount() {
 
 							<Select
 								label='Class'
-								value={formClass}
+								value={userClass}
 								className='my-account-section-form__select'
-								onChange={e => setFormClass(e.target.value)}
+								onChange={e => setUserClass(e.target.value)}
 							>
 								<MenuItem value='9'>9</MenuItem>
 
@@ -98,16 +175,19 @@ function MyAccount() {
 							variant='outlined'
 							label='reset password'
 							type='password'
-							value={password}
+							value={resetPassword}
 							className='my-account-section-form__input'
-							onChange={e => setPassword(e.target.value)}
+							onChange={e => setResetPassword(e.target.value)}
 							inputProps={{ style: { fontSize: 20 } }}
 							InputLabelProps={{ style: { fontSize: 20 } }}
 							fullWidth
 						/>
 					</div>
 
-					<BPrimary type='submit' className='my-account-section-form__btn'>
+					<BPrimary
+						className='my-account-section-form__btn'
+						onClick={() => setOpen(true)}
+					>
 						Save
 					</BPrimary>
 				</form>

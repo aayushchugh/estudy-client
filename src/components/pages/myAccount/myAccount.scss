@@ -1,11 +1,36 @@
 @import '../../../styles/variables';
 
-/* ----------------------------------- top ---------------------------------- */
-
 .my-account-section {
 	padding: 0 8rem;
 	margin: 5rem 0;
+
+	&__alert {
+		margin-bottom: 2rem !important;
+	}
 }
+
+/* ---------------------------------- modal --------------------------------- */
+
+.my-account-section-modal {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__input {
+		label {
+			background-color: $color-white;
+		}
+	}
+
+	&__btn {
+		margin-top: 2rem !important;
+	}
+}
+
+/* ----------------------------------- top ---------------------------------- */
 
 .my-account-section-top {
 	&__name {
@@ -23,6 +48,11 @@
 		font-size: 2rem !important;
 		color: $color-primary;
 		cursor: pointer;
+		transition: all 0.2s;
+
+		&:hover {
+			color: $color-primary-dark;
+		}
 	}
 }
 
@@ -44,11 +74,11 @@
 		&:not(:last-of-type) {
 			margin-right: 2rem !important;
 		}
-	}
 
-	// &__form-control {
-	// 	width: 10% !important;
-	// }
+		label {
+			background-color: $color-white !important;
+		}
+	}
 
 	&__select {
 		font-size: 2rem !important;

@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.modal {
+	&__box {
+		position: absolute;
+		background-color: $color-white;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 4rem !important;
+		border-radius: $border-radius-sm;
+	}
+}

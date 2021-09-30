@@ -11,9 +11,13 @@ export function HPrimary({ children, className }) {
 	);
 }
 
-export function HSecondary({ children, className }) {
+export function HSecondary({ children, className, onClick }) {
 	return (
-		<Typography variant='h2' className={`heading-secondary ${className}`}>
+		<Typography
+			variant='h2'
+			onClick={onClick}
+			className={`heading-secondary ${className}`}
+		>
 			{children}
 		</Typography>
 	);

@@ -6,7 +6,7 @@ import { BPrimary } from '../../UiComponents/Btn';
 import './nav.scss';
 
 document.body.addEventListener('click', e => {
-	const dropDown = document.querySelectorAll('.nav-dropdown');
+	const dropDown = document.querySelectorAll('.nav-list__dropdown');
 
 	dropDown.forEach(el => {
 		if (el.classList.contains('hidden')) return;
@@ -36,23 +36,26 @@ function Nav() {
 							<ExpandMore />
 						</div>
 
-						<ul className='hidden nav-dropdown'>
-							<li className='mt-0'>Class 9</li>
+						<ul className='hidden nav-list__dropdown'>
+							<li className='nav-list__dropdown-item'>Class 9</li>
 						</ul>
 					</li>
+
 					<li onClick={clickHandler} className='nav-list__item'>
 						<div>
 							<p>Study Material</p>
 							<ExpandMore />
 						</div>
 
-						<ul className='hidden nav-dropdown'>
-							<li className='mt-0'>Class 9</li>
+						<ul className='hidden nav-list__dropdown'>
+							<li className='nav-list__dropdown-item'>Class 9</li>
 						</ul>
 					</li>
 
 					<li className='nav-list__item'>
-						<BPrimary>My Account</BPrimary>
+						<Link to='/my-account' className='nav__link'>
+							<BPrimary>My Account</BPrimary>
+						</Link>
 					</li>
 				</ul>
 			</nav>

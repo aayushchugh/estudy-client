@@ -16,6 +16,7 @@ import Signup from './components/routes/Signup';
 import NotFound from './components/pages/NotFound';
 import Content from './components/routes/content';
 import ContactUs from './components/routes/ContactUs';
+import MyAccount from './components/pages/myAccount/MyAccount';
 
 function App() {
 	return (
@@ -42,6 +43,10 @@ function App() {
 
 					<Route path='/contact-us' exact>
 						<ContactUs />
+					</Route>
+
+					<Route path='/my-account'>
+						<MyAccount />
 					</Route>
 
 					<Route path='/404' exact>

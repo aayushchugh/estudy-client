@@ -27,6 +27,7 @@ function Form() {
 
 		if (response.data.status === 200) {
 			localStorage.setItem('token', response.data.token);
+			window.location = '/';
 		} else {
 			if (response.data.status === 400) {
 				document

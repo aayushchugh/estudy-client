@@ -62,7 +62,7 @@ function MyAccount() {
 					setSubmit(true);
 					setOpen(false);
 
-					if (data.data.status === 204) {
+					if (data.data.status === 200) {
 						localStorage.setItem('token', data.data.token);
 
 						document

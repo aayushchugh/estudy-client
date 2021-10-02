@@ -26,7 +26,7 @@ function Form() {
 				message: message,
 			})
 			.then(data => {
-				if (data.data.status === 204) {
+				if (data.data.status === 201) {
 					document
 						.querySelector('.form__alert--success')
 						.classList.remove('hidden');

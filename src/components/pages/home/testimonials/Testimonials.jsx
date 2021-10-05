@@ -15,7 +15,9 @@ function Testimonials() {
 
 	useEffect(() => {
 		axios
-			.get(`${process.env.REACT_APP_API_URL}/testimonial/get-all`)
+			.get(
+				`${process.env.REACT_APP_API_URL}/testimonial/get-all?auth=${process.env.REACT_APP_API_AUTH}`
+			)
 			.then(data => {
 				setApiData(data.data.data);
 			});

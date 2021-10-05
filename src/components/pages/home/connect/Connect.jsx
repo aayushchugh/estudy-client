@@ -17,11 +17,14 @@ function Connect() {
 		e.preventDefault();
 
 		axios
-			.post(`${process.env.REACT_APP_API_URL}/updateEmailList/add`, {
-				name: name,
-				email: email,
-				class: userClass,
-			})
+			.post(
+				`${process.env.REACT_APP_API_URL}/updateEmailList/add?auth=${process.env.REACT_APP_API_AUTH}`,
+				{
+					name: name,
+					email: email,
+					class: userClass,
+				}
+			)
 			.then(data => {
 				console.log(data.data);
 

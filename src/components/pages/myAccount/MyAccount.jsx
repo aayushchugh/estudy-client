@@ -52,12 +52,15 @@ function MyAccount() {
 					  (resetPassword = resetPassword);
 
 			axios
-				.patch(`${process.env.REACT_APP_API_URL}/users/update/${id}`, {
-					name: name,
-					userClass: userClass,
-					userPassword: password,
-					updatePassword: updatePassword,
-				})
+				.patch(
+					`${process.env.REACT_APP_API_URL}/users/update/${id}?auth=${process.env.REACT_APP_API_AUTH}`,
+					{
+						name: name,
+						userClass: userClass,
+						userPassword: password,
+						updatePassword: updatePassword,
+					}
+				)
 				.then(data => {
 					setSubmit(true);
 					setOpen(false);

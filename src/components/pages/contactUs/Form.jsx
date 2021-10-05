@@ -19,12 +19,15 @@ function Form() {
 		e.preventDefault();
 
 		axios
-			.post(`${process.env.REACT_APP_API_URL}/contact-us/new`, {
-				name: name,
-				email: email,
-				subject: subject,
-				message: message,
-			})
+			.post(
+				`${process.env.REACT_APP_API_URL}/contact-us/new?auth=${process.env.REACT_APP_API_AUTH}`,
+				{
+					name: name,
+					email: email,
+					subject: subject,
+					message: message,
+				}
+			)
 			.then(data => {
 				if (data.data.status === 201) {
 					document

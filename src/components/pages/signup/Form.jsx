@@ -20,7 +20,7 @@ function Form() {
 
 		if (password === confirmPassword) {
 			const response = await axios.post(
-				`${process.env.REACT_APP_API_URL}/signup`,
+				`${process.env.REACT_APP_API_URL}/signup?auth=${process.env.REACT_APP_API_AUTH}`,
 				{
 					name: name,
 					email: email,

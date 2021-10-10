@@ -13,6 +13,7 @@ import './form.scss';
 function Form() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [error, setError] = useState('');
 
 	const handleForm = async e => {
 		e.preventDefault();
@@ -30,14 +31,16 @@ function Form() {
 			window.location = '/';
 		} else {
 			if (response.data.status === 400) {
+				setError(response.data.message);
 				document
-					.querySelector('.form__alert--incorrect-password')
+					.querySelector('.form__alert--error')
 					.classList.remove('hidden');
 			}
 
 			if (response.data.status === 404) {
+				setError(response.data.message);
 				document
-					.querySelector('.form__alert--user-not-found')
+					.querySelector('.form__alert--error')
 					.classList.remove('hidden');
 			}
 		}
@@ -48,6 +51,10 @@ function Form() {
 			<form className='form' onSubmit={handleForm}>
 				<HSecondary className='form__heading'>Login</HSecondary>
 
+				<AError className='form__alert form__alert--error hidden'>
+					{error}
+				</AError>
+
 				<TextField
 					className='form__input'
 					variant='outlined'
@@ -57,6 +64,7 @@ function Form() {
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setEmail(e.target.value)}
+					required
 				/>
 
 				<TextField
@@ -68,15 +76,8 @@ function Form() {
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setPassword(e.target.value)}
+					required
 				/>
-
-				<AError className='form__alert form__alert--user-not-found hidden'>
-					User not found
-				</AError>
-
-				<AError className='form__alert form__alert--incorrect-password hidden'>
-					Incorrect Password
-				</AError>
 
 				<BPrimary type='submit'>Login &rarr;</BPrimary>
 			</form>

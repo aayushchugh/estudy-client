@@ -12,6 +12,8 @@ function Connect() {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [userClass, setUserClass] = useState('');
+	const [error, setError] = useState('');
+	const [success, setSuccess] = useState('');
 
 	const submitHandler = e => {
 		e.preventDefault();
@@ -29,22 +31,14 @@ function Connect() {
 				console.log(data.data);
 
 				if (data.data.status === 201) {
+					setSuccess(data.data.message);
 					document
 						.querySelector('.connect-section-form__alert--success')
 						.classList.remove('hidden');
-				} else if (
-					data.data.status === 400 &&
-					data.data.message === 'Email already exists'
-				) {
+				} else if (data.data.status === 400) {
+					setError(data.data.message);
 					document
 						.querySelector('.connect-section-form__alert--error-exists')
-						.classList.remove('hidden');
-				} else if (
-					data.data.status === 400 &&
-					data.data.message === 'Email looks fake'
-				) {
-					document
-						.querySelector('.connect-section-form__alert--error-fake')
 						.classList.remove('hidden');
 				}
 
@@ -68,15 +62,11 @@ function Connect() {
 				<div className='connect-section__content'>
 					<form className='connect-section-form' onSubmit={submitHandler}>
 						<ASuccess className='connect-section-form__alert connect-section-form__alert--success hidden'>
-							You are successfully added to our mailing list
+							{success}
 						</ASuccess>
 
-						<AError className='connect-section-form__alert connect-section-form__alert--error-exists hidden'>
-							Email already exists
-						</AError>
-
-						<AError className='connect-section-form__alert connect-section-form__alert--error-fake hidden'>
-							Email looks fake
+						<AError className='connect-section-form__alert connect-section-form__alert--error hidden'>
+							{error}
 						</AError>
 
 						<HTertiary className='connect-section-form__heading'>
@@ -93,6 +83,7 @@ function Connect() {
 							onChange={e => setName(e.target.value)}
 							value={name}
 							fullWidth
+							required
 						/>
 
 						<TextField
@@ -105,6 +96,7 @@ function Connect() {
 							onChange={e => setEmail(e.target.value)}
 							value={email}
 							fullWidth
+							required
 						/>
 
 						<TextField
@@ -117,6 +109,7 @@ function Connect() {
 							onChange={e => setUserClass(e.target.value)}
 							value={userClass}
 							fullWidth
+							required
 						/>
 
 						<BPrimary type='submit'>SIGN UP</BPrimary>

@@ -25,6 +25,8 @@ function MyAccount() {
 	const [id, setId] = useState('');
 	const [open, setOpen] = useState(false);
 	const [submit, setSubmit] = useState(false);
+	const [error, setError] = useState('');
+	const [success, setSuccess] = useState('');
 
 	useEffect(() => {
 		const token = jwt.decode(localStorage.getItem('token'));
@@ -67,11 +69,12 @@ function MyAccount() {
 
 					if (data.data.status === 200) {
 						localStorage.setItem('token', data.data.token);
-
+						setSuccess(data.data.message);
 						document
 							.querySelector('.my-account-section__alert--success')
 							.classList.remove('hidden');
 					} else if (data.data.status === 400) {
+						setError(data.data.message);
 						document
 							.querySelector('.my-account-section__alert--error')
 							.classList.remove('hidden');
@@ -99,6 +102,7 @@ function MyAccount() {
 						inputProps={{ style: { fontSize: 20 } }}
 						InputLabelProps={{ style: { fontSize: 20 } }}
 						fullWidth
+						required
 					/>
 
 					<BPrimary
@@ -113,11 +117,11 @@ function MyAccount() {
 			{/* alerts */}
 
 			<ASuccess className='my-account-section__alert my-account-section__alert--success hidden'>
-				successfully saved
+				{success}
 			</ASuccess>
 
 			<AError className='my-account-section__alert my-account-section__alert--error hidden'>
-				Incorrect password
+				{error}
 			</AError>
 
 			{/* top */}
@@ -150,6 +154,7 @@ function MyAccount() {
 							inputProps={{ style: { fontSize: 20 } }}
 							InputLabelProps={{ style: { fontSize: 20 } }}
 							fullWidth
+							required
 						/>
 
 						<FormControl
@@ -165,6 +170,7 @@ function MyAccount() {
 								value={userClass}
 								className='my-account-section-form__select'
 								onChange={e => setUserClass(e.target.value)}
+								required
 							>
 								<MenuItem value='9'>9</MenuItem>
 
@@ -184,6 +190,7 @@ function MyAccount() {
 							inputProps={{ style: { fontSize: 20 } }}
 							InputLabelProps={{ style: { fontSize: 20 } }}
 							fullWidth
+							required
 						/>
 					</div>
 

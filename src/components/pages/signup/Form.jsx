@@ -14,6 +14,7 @@ function Form() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
+	const [error, setError] = useState('');
 
 	const handleForm = async e => {
 		e.preventDefault();
@@ -29,21 +30,23 @@ function Form() {
 			);
 
 			if (response.data.status === 400) {
+				setError(response.data.message);
 				document
-					.querySelector('.form__alert--email-exists')
+					.querySelector('.form__alert--error')
 					.classList.remove('hidden');
 			} else {
 				window.location = '/login';
 			}
 		} else {
-			document
-				.querySelector('.form__alert--password-not-match')
-				.classList.remove('hidden');
+			setError('Passwords do not match');
+			document.querySelector('.form__alert--error').classList.remove('hidden');
 		}
 	};
 
 	return (
 		<section className='signup-section'>
+			<AError className='form__alert form__alert--error hidden'>{error}</AError>
+
 			<form className='form' onSubmit={handleForm}>
 				<HSecondary className='form__heading'>Signup</HSecondary>
 
@@ -56,6 +59,7 @@ function Form() {
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setName(e.target.value)}
+					required
 				/>
 
 				<TextField
@@ -67,6 +71,7 @@ function Form() {
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setEmail(e.target.value)}
+					required
 				/>
 
 				<TextField
@@ -78,6 +83,7 @@ function Form() {
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setPassword(e.target.value)}
+					required
 				/>
 
 				<TextField
@@ -89,15 +95,8 @@ function Form() {
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setConfirmPassword(e.target.value)}
+					required
 				/>
-
-				<AError className='form__alert form__alert--password-not-match hidden'>
-					password and confirm password do not match
-				</AError>
-
-				<AError className='form__alert form__alert--email-exists hidden'>
-					Email already exists, please login
-				</AError>
 
 				<BPrimary type='submit'>Signup &rarr;</BPrimary>
 			</form>

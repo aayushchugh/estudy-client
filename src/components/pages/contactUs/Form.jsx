@@ -14,6 +14,8 @@ function Form() {
 	const [email, setEmail] = useState('');
 	const [subject, setSubject] = useState('');
 	const [message, setMessage] = useState('');
+	const [error, setError] = useState('');
+	const [success, setSuccess] = useState('');
 
 	const formHandler = e => {
 		e.preventDefault();
@@ -30,10 +32,12 @@ function Form() {
 			)
 			.then(data => {
 				if (data.data.status === 201) {
+					setSuccess(data.data.message);
 					document
 						.querySelector('.form__alert--success')
 						.classList.remove('hidden');
 				} else if (data.data.status === 400) {
+					setError(data.data.message);
 					document
 						.querySelector('.form__alert--error')
 						.classList.remove('hidden');
@@ -49,13 +53,9 @@ function Form() {
 	return (
 		<section className='contact-section'>
 			<form className='form' onSubmit={formHandler}>
-				<ASuccess className='form__alert--success hidden'>
-					Thanks for contacting. You will be contacted within 24 hours
-				</ASuccess>
+				<ASuccess className='form__alert--success hidden'>{success}</ASuccess>
 
-				<AError className='form__alert--error hidden'>
-					wait for your previous message to be closed
-				</AError>
+				<AError className='form__alert--error hidden'>{error}</AError>
 
 				<HSecondary className='form__heading'>Contact us</HSecondary>
 
@@ -69,6 +69,7 @@ function Form() {
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					onChange={e => setName(e.target.value)}
 					fullWidth
+					required
 				/>
 
 				<TextField
@@ -81,6 +82,7 @@ function Form() {
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					onChange={e => setEmail(e.target.value)}
 					fullWidth
+					required
 				/>
 
 				<TextField
@@ -93,6 +95,7 @@ function Form() {
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					onChange={e => setSubject(e.target.value)}
 					fullWidth
+					required
 				/>
 
 				<TextField
@@ -106,6 +109,7 @@ function Form() {
 					InputLabelProps={{ style: { fontSize: 20 } }}
 					onChange={e => setMessage(e.target.value)}
 					fullWidth
+					required
 				/>
 
 				<BPrimary type='submit'>Submit</BPrimary>

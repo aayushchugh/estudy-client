@@ -6,9 +6,9 @@ import SamplePaper from '../pages/content/sample_paper/SamplePaper';
 function Content() {
 	return (
 		<main>
-      <Notes />
-      <Pyq />
-      <SamplePaper/>
+			<Notes />
+			<Pyq />
+			<SamplePaper />
 		</main>
 	);
 }

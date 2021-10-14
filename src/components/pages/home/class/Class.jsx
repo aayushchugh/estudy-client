@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { HPrimary } from '../../../UiComponents/Typography';
@@ -24,11 +25,17 @@ function Class() {
 
 			<div className='class-section__class'>
 				{response.map(data => (
-					<CardHeading
-						className='class-section__card'
-						heading={data.title}
-						para={data.description}
-					/>
+					<Link
+						to={`/class/${data.title}`}
+						className='class-section__link'
+						key={data._id}
+					>
+						<CardHeading
+							className='class-section__card'
+							heading={data.title}
+							para={data.description}
+						/>
+					</Link>
 				))}
 			</div>
 		</section>

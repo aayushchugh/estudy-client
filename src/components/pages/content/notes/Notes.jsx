@@ -8,13 +8,6 @@ import { HSecondary } from '../../../UiComponents/Typography';
 import { CardPara } from '../../../UiComponents/Card';
 import './notes.scss';
 
-/* 
-	1) get notes of class
-	2) get subject of class
-	3) loop through subject and create tabs
-	4) now in subjects check if note subjectTitle === subject title and than show on page
- */
-
 function Notes() {
 	const [value, setValue] = useState(0);
 	const [notes, setNotes] = useState([]);

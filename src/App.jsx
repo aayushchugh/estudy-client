@@ -14,7 +14,7 @@ import Home from './components/routes/Home';
 import Login from './components/routes/Login';
 import Signup from './components/routes/Signup';
 import NotFound from './components/pages/NotFound';
-import Content from './components/routes/Content';
+import Class from './components/routes/Class';
 import ContactUs from './components/routes/ContactUs';
 import MyAccount from './components/pages/myAccount/MyAccount';
 
@@ -27,6 +27,10 @@ function App() {
 				<Switch>
 					<Route path='/' exact>
 						<Home />
+					</Route>
+
+					<Route path='/class/:classTitle' exact>
+						<Class />
 					</Route>
 
 					<Route path='/login' exact>
@@ -43,10 +47,6 @@ function App() {
 
 					<Route path='/my-account' exact>
 						<MyAccount />
-					</Route>
-
-					<Route path='/class/:classTitle' exact>
-						<Content />
 					</Route>
 
 					<Route path='/404' exact>

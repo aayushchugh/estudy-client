@@ -4,17 +4,19 @@
 	list-style-type: none;
 	font-size: 1.5rem;
 	margin: 1.5rem;
-  transition: all .3s;
-  &:hover{color: $color-primary;}
+	transition: all 0.3s;
+	&:hover {
+		color: $color-primary;
+	}
 }
 
 .section-notes {
-  padding: 0 8rem;
-  margin: 4rem 0rem;
+	padding: 0 8rem;
+	margin: 4rem 0;
 	&__background {
-    width: 80%;
-    margin: 5rem 0rem !important;
-    padding: 2rem;
+		width: 80%;
+		margin: 5rem 0 !important;
+		padding: 2rem;
 		&:hover {
 			transform: none !important;
 		}
@@ -28,8 +30,7 @@
 		color: $color-primary !important;
 		font-size: 1.5rem !important;
 	}
-  ul{
-    margin-top: 4rem;
-  }
-  
+	ul {
+		margin-top: 4rem;
+	}
 }

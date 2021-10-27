@@ -32,13 +32,14 @@ function Connect() {
 
 				if (data.data.status === 201) {
 					setSuccess(data.data.message);
+
 					document
 						.querySelector('.connect-section-form__alert--success')
 						.classList.remove('hidden');
 				} else if (data.data.status === 400) {
 					setError(data.data.message);
 					document
-						.querySelector('.connect-section-form__alert--error-exists')
+						.querySelector('.connect-section-form__alert--error')
 						.classList.remove('hidden');
 				}
 

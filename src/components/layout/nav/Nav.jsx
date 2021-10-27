@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { ExpandMore } from '@mui/icons-material';
 import { BPrimary } from '../../UiComponents/Btn';
@@ -15,6 +16,17 @@ document.body.addEventListener('click', e => {
 });
 
 function Nav() {
+	const [response, setResponse] = useState([]);
+	useEffect(() => {
+		axios
+			.get(
+				`${process.env.REACT_APP_API_URL}/class/get-all?auth=${process.env.REACT_APP_API_AUTH}`
+			)
+			.then(data => {
+				setResponse(data.data.data);
+			});
+	}, []);
+
 	const clickHandler = e => {
 		e.stopPropagation();
 		const parent = e.target.parentElement.parentElement.children[1];
@@ -29,26 +41,56 @@ function Nav() {
 						<img src='/images/logo.png' alt='logo' />
 					</div>
 				</Link>
+
 				<ul className='nav-list'>
 					<li onClick={clickHandler} className='nav-list__item'>
 						<div>
-							<p>Study Material</p>
+							<p>Notes </p>
 							<ExpandMore />
 						</div>
 
 						<ul className='hidden nav-list__dropdown'>
-							<li className='nav-list__dropdown-item'>Class 9</li>
+							{response.map(c => (
+								<li className='nav-list__dropdown-item'>
+									<Link to={`/class/${c.title}`} key={c._id}>
+										{c.title}
+									</Link>
+								</li>
+							))}
 						</ul>
 					</li>
 
 					<li onClick={clickHandler} className='nav-list__item'>
 						<div>
-							<p>Study Material</p>
+							<p>Pyqs</p>
 							<ExpandMore />
 						</div>
 
 						<ul className='hidden nav-list__dropdown'>
-							<li className='nav-list__dropdown-item'>Class 9</li>
+							{response.map(c => (
+								<li className='nav-list__dropdown-item'>
+									<Link to={`/class/${c.title}`} key={c._id}>
+										{c.title}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</li>
+
+					<li onClick={clickHandler} className='nav-list__item'>
+						<div>
+							<p>Ncert Solutions</p>
+							<ExpandMore />
+						</div>
+
+						<ul className='hidden nav-list__dropdown'>
+							{response.map(c => (
+								<li className='nav-list__dropdown-item'>
+									<Link to={`/class/${c.title}`} key={c._id}>
+										{c.title}
+									</Link>
+								</li>
+							))}{' '}
 						</ul>
 					</li>
 

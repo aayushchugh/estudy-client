@@ -48,6 +48,10 @@
 		transform: scale(1.05) translateY(-0.5rem);
 	}
 
+	@media screen and (max-width: 1400px) {
+		padding: 1rem;
+	}
+
 	&__para {
 		font-size: 1.5rem !important;
 		text-align: left !important;

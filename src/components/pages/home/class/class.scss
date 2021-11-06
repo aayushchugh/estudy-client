@@ -1,8 +1,12 @@
+@import '../../../../styles/mixins';
 @import '../../../../styles/variables';
 
 .class-section {
-	margin-top: 10rem;
-	padding: 4rem 8rem;
+	@include section-padding;
+	@include section-margin;
+
+	padding-top: 4rem !important;
+	padding-bottom: 4rem !important;
 	background-color: $color-secondary-light-1;
 
 	&__link {
@@ -16,5 +20,10 @@
 		grid-gap: 5rem;
 		justify-items: center;
 		grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+
+		@media screen and (max-width: 1445px) {
+			grid-gap: 3rem;
+			grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+		}
 	}
 }

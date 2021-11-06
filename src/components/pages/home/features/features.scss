@@ -1,7 +1,10 @@
+@import '../../../../styles/mixins';
+
 .feature-section {
+	@include section-margin;
+
 	position: relative;
 	display: flex;
-	margin-top: 10rem;
 
 	&__content {
 		display: flex;

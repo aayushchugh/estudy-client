@@ -1,0 +1,15 @@
+@mixin section-padding {
+	padding: 0 8rem;
+
+	@media screen and (max-width: 1400px) {
+		padding: 0 6rem;
+	}
+
+	@media screen and (max-width: 1200px) {
+		padding: 0 1rem;
+	}
+}
+
+@mixin section-margin {
+	margin-top: 10rem;
+}

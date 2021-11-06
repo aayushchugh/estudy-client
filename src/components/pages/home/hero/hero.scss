@@ -1,9 +1,13 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/variables';
+
 .hero-section {
+	@include section-padding;
+
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	margin-top: 5rem;
-	padding: 0 8rem;
 
 	&__img {
 		height: 50rem;

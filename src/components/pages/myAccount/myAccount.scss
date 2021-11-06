@@ -1,7 +1,9 @@
+@import '../../../styles/mixins';
 @import '../../../styles/variables';
 
 .my-account-section {
-	padding: 0 8rem;
+	@include section-padding;
+
 	margin: 5rem 0;
 
 	&__alert {

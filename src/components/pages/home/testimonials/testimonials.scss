@@ -1,8 +1,9 @@
+@import '../../../../styles/mixins';
 @import '../../../../styles/variables';
 
 .testimonial-section {
-	padding: 0 8rem;
-	margin-top: 10rem;
+	@include section-padding;
+	@include section-margin;
 
 	&__testimonials-container {
 		display: grid;

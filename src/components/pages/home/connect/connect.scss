@@ -1,8 +1,10 @@
+@import '../../../../styles/mixins';
 @import '../../../../styles/variables';
 
 .connect-section {
+	@include section-padding;
+
 	margin: 10rem 0;
-	padding: 0 8rem;
 
 	&__container {
 		display: flex;

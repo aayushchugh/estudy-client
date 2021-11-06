@@ -1,7 +1,11 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/variables';
+
 .about-section {
+	@include section-padding;
+	@include section-margin;
+
 	display: flex;
-	padding: 0 8rem;
-	margin-top: 10rem;
 	justify-content: space-between;
 	align-items: center;
 

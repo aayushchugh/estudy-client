@@ -6,12 +6,28 @@
 	position: relative;
 	display: flex;
 
+	@media screen and (max-width: 540px) {
+		flex-direction: column;
+	}
+
 	&__content {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		margin-left: 10%;
+
+		@media screen and (max-width: 1150px) {
+			margin-left: 5%;
+		}
+
+		@media screen and (max-width: 780px) {
+			margin-left: 8%;
+		}
+
+		@media screen and (max-width: 540px) {
+			align-self: flex-start;
+		}
 	}
 
 	&__grid {
@@ -19,6 +35,10 @@
 		grid-template-columns: repeat(2, 1fr);
 		gap: 8rem;
 		margin: 4rem 0;
+
+		@media screen and (max-width: 680px) {
+			gap: 5rem;
+		}
 	}
 
 	&__btn {
@@ -30,6 +50,24 @@
 		position: absolute;
 		right: -10rem;
 		height: 60rem;
+
+		@media screen and (max-width: 1150px) {
+			height: 50rem;
+		}
+
+		@media screen and (max-width: 880px) {
+			height: 40rem;
+		}
+
+		@media screen and (max-width: 680px) {
+			height: 35rem;
+		}
+
+		@media screen and (max-width: 540px) {
+			position: static;
+			align-self: flex-end;
+			margin-top: 4rem;
+		}
 
 		img {
 			height: 100%;

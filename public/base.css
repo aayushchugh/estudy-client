@@ -8,7 +8,7 @@
 
 html {
 	font-size: 70%; /* 1rem = 11px */
-
+	-webkit-tap-highlight-color: #00000000;
 	scroll-behavior: smooth;
 }
 

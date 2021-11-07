@@ -2,11 +2,14 @@
 
 .heading-primary {
 	font-family: 'Patrick Hand', cursive !important;
-	font-size: 3.75rem;
 	font-weight: 400;
 	color: $color-primary-dark;
 	text-align: center;
 	text-shadow: $shadow-primary !important;
+
+	@media screen and (max-width: 1200px) {
+		font-size: 5rem !important;
+	}
 }
 
 .heading-secondary {

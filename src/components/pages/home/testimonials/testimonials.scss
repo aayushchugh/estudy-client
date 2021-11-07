@@ -6,11 +6,7 @@
 	@include section-margin;
 
 	&__testimonials-container {
-		display: grid;
-		grid-gap: 5rem;
-		justify-items: center;
-		grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-		margin-top: 5rem;
+		@include grid-3-column;
 	}
 
 	&__stars {

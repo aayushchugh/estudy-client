@@ -12,7 +12,7 @@ function About() {
 			</div>
 
 			<div className='about-section__content'>
-				<HPrimary>Study material curated for You</HPrimary>
+				<HPrimary className='about-section__heading'>Study material curated for You</HPrimary>
 
 				<PPrimary className='about-section__para'>
 					Have a look at the Hand-Crafted and Hand Written Content, especially

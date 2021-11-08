@@ -79,8 +79,6 @@ function Connect() {
 							variant='outlined'
 							label='Name Folks'
 							type='text'
-							inputProps={{ style: { fontSize: 20 } }}
-							InputLabelProps={{ style: { fontSize: 20 } }}
 							onChange={e => setName(e.target.value)}
 							value={name}
 							fullWidth
@@ -92,8 +90,6 @@ function Connect() {
 							variant='outlined'
 							label='Email'
 							type='email'
-							inputProps={{ style: { fontSize: 20 } }}
-							InputLabelProps={{ style: { fontSize: 20 } }}
 							onChange={e => setEmail(e.target.value)}
 							value={email}
 							fullWidth
@@ -105,8 +101,6 @@ function Connect() {
 							variant='outlined'
 							label='Enter Your Class'
 							type='number'
-							inputProps={{ style: { fontSize: 20 } }}
-							InputLabelProps={{ style: { fontSize: 20 } }}
 							onChange={e => setUserClass(e.target.value)}
 							value={userClass}
 							fullWidth

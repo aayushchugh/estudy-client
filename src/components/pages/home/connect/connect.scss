@@ -5,11 +5,27 @@
 	@include section-padding;
 
 	margin: 10rem 0;
+	height: max-content;
 
 	&__container {
 		display: flex;
 		justify-content: space-evenly;
+		align-items: center;
 		margin-top: 5rem;
+
+		@media screen and (max-width: 540px) {
+			flex-direction: column;
+		}
+
+		img {
+			@media screen and (max-width: 950px) {
+				height: 40rem;
+			}
+
+			@media screen and (max-width: 720px) {
+				height: 30rem;
+			}
+		}
 	}
 
 	&__content {
@@ -23,6 +39,10 @@
 		box-shadow: $shadow-secondary;
 		padding: 3rem;
 
+		@media screen and (max-width: 540px) {
+			padding: 1rem;
+		}
+
 		&__alert {
 			margin: 2rem 0;
 		}
@@ -34,8 +54,13 @@
 		&__input {
 			margin-bottom: 3rem !important;
 
+			input {
+				font-size: 2rem !important;
+			}
+
 			label {
 				background-color: $color-white;
+				font-size: 2rem !important;
 			}
 		}
 	}

@@ -28,8 +28,6 @@ function Connect() {
 				}
 			)
 			.then(data => {
-				console.log(data.data);
-
 				if (data.data.status === 201) {
 					setSuccess(data.data.message);
 

@@ -21,8 +21,8 @@ function Form() {
 		const response = await axios.post(
 			`${process.env.REACT_APP_API_URL}/login?auth=${process.env.REACT_APP_API_AUTH}`,
 			{
-				email: email,
-				password: password,
+				email,
+				password,
 			}
 		);
 

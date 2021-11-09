@@ -57,10 +57,10 @@ function MyAccount() {
 				.patch(
 					`${process.env.REACT_APP_API_URL}/users/update/${id}?auth=${process.env.REACT_APP_API_AUTH}`,
 					{
-						name: name,
-						userClass: userClass,
+						name,
+						userClass,
+						updatePassword,
 						userPassword: password,
-						updatePassword: updatePassword,
 					}
 				)
 				.then(data => {

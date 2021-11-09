@@ -24,10 +24,10 @@ function Form() {
 			.post(
 				`${process.env.REACT_APP_API_URL}/contact-us/new?auth=${process.env.REACT_APP_API_AUTH}`,
 				{
-					name: name,
-					email: email,
-					subject: subject,
-					message: message,
+					name,
+					email,
+					subject,
+					message,
 				}
 			)
 			.then(data => {

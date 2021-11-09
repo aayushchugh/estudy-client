@@ -22,8 +22,8 @@ function Connect() {
 			.post(
 				`${process.env.REACT_APP_API_URL}/updateEmailList/add?auth=${process.env.REACT_APP_API_AUTH}`,
 				{
-					name: name,
-					email: email,
+					name,
+					email,
 					class: userClass,
 				}
 			)

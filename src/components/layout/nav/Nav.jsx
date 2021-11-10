@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { default as jwt } from 'jsonwebtoken';
 import { Link } from 'react-router-dom';
 import { ExpandMore } from '@mui/icons-material';
+
 import { BPrimary } from '../../UiComponents/Btn';
 
 import './nav.scss';
@@ -17,6 +19,9 @@ document.body.addEventListener('click', e => {
 
 function Nav() {
 	const [response, setResponse] = useState([]);
+
+	const token = jwt.decode(localStorage.getItem('token'));
+
 	useEffect(() => {
 		axios
 			.get(
@@ -90,12 +95,12 @@ function Nav() {
 										{c.title}
 									</Link>
 								</li>
-							))}{' '}
+							))}
 						</ul>
 					</li>
 
 					<li className='nav-list__item'>
-						<Link to='/my-account' className='nav__link'>
+						<Link to={token ? '/my-account' : '/login'} className='nav__link'>
 							<BPrimary>My Account</BPrimary>
 						</Link>
 					</li>

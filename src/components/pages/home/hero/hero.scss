@@ -47,13 +47,11 @@
 	}
 
 	&__heading {
+		line-height: 8rem !important;
+
 		@media screen and (max-width: 700px) {
 			font-size: 4rem !important;
 		}
-	}
-
-	&__heading {
-		line-height: 8rem !important;
 	}
 
 	&__sub-heading {

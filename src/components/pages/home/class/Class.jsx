@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { default as jwt } from 'jsonwebtoken';
 
 import { HPrimary } from '../../../UiComponents/Typography';
 import { CardHeading } from '../../../UiComponents/Card';
@@ -8,6 +9,8 @@ import './class.scss';
 
 function Class() {
 	const [response, setResponse] = useState([]);
+
+	const token = jwt.decode(localStorage.getItem('token'));
 
 	useEffect(() => {
 		axios
@@ -26,7 +29,7 @@ function Class() {
 			<div className='class-section__class'>
 				{response.map(data => (
 					<Link
-						to={`/class/${data.title}`}
+						to={token ? `/class/${data.title}` : '/login'}
 						className='class-section__link'
 						key={data._id}
 					>

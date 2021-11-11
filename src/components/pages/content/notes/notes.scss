@@ -17,11 +17,17 @@
 
 	margin: 4rem 0;
 
+	@media screen and (max-width: 540px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
 	&__background {
 		width: 80%;
 		margin: 5rem 0 !important;
 		padding: 2rem;
-		
+
 		&:hover {
 			transform: none !important;
 		}
@@ -35,7 +41,7 @@
 		color: $color-primary !important;
 		font-size: 1.5rem !important;
 	}
-	
+
 	ul {
 		margin-top: 4rem;
 	}

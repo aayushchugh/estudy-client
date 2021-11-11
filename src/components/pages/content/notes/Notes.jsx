@@ -49,6 +49,10 @@ function Notes() {
 					className='section-notes__tabs'
 					value={value}
 					onChange={handleTabs}
+					textColor='inherit'
+					variant='scrollable'
+					scrollButtons={false}
+					allowScrollButtonsMobile
 				>
 					{subjects.map(subject => (
 						<Tab

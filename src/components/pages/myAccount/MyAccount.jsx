@@ -151,8 +151,6 @@ function MyAccount() {
 							value={name}
 							className='my-account-section-form__input'
 							onChange={e => setName(e.target.value)}
-							inputProps={{ style: { fontSize: 20 } }}
-							InputLabelProps={{ style: { fontSize: 20 } }}
 							fullWidth
 							required
 						/>
@@ -187,8 +185,6 @@ function MyAccount() {
 							value={resetPassword}
 							className='my-account-section-form__input'
 							onChange={e => setResetPassword(e.target.value)}
-							inputProps={{ style: { fontSize: 20 } }}
-							InputLabelProps={{ style: { fontSize: 20 } }}
 							fullWidth
 							required
 						/>

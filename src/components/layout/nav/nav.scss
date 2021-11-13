@@ -11,10 +11,18 @@
 	justify-content: space-between;
 	padding: 0.5rem 8rem;
 
+	@media screen and (max-width: 540px) {
+		justify-content: space-around;
+	}
+
 	&__logo {
 		height: 9rem;
 		width: 9rem;
 		transform: translateX(-1rem);
+
+		@media screen and (max-width: 420px) {
+			display: none;
+		}
 
 		img {
 			height: 100%;

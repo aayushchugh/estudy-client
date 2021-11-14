@@ -65,8 +65,6 @@ function Form() {
 					label='Name'
 					type='text'
 					value={name}
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
 					onChange={e => setName(e.target.value)}
 					fullWidth
 					required
@@ -78,8 +76,6 @@ function Form() {
 					label='Email'
 					type='email'
 					value={email}
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
 					onChange={e => setEmail(e.target.value)}
 					fullWidth
 					required
@@ -91,8 +87,6 @@ function Form() {
 					label='Subject'
 					type='text'
 					value={subject}
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
 					onChange={e => setSubject(e.target.value)}
 					fullWidth
 					required
@@ -105,8 +99,6 @@ function Form() {
 					type='text'
 					value={message}
 					multiline
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
 					onChange={e => setMessage(e.target.value)}
 					fullWidth
 					required

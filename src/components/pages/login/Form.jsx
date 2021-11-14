@@ -60,8 +60,6 @@ function Form() {
 					variant='outlined'
 					label='email'
 					type='email'
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setEmail(e.target.value)}
 					required
@@ -72,8 +70,6 @@ function Form() {
 					variant='outlined'
 					label='password'
 					type='password'
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setPassword(e.target.value)}
 					required

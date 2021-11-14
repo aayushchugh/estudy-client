@@ -33,7 +33,12 @@
 	&__input {
 		margin-bottom: 3rem !important;
 
+		input {
+			font-size: 2rem !important;
+		}
+
 		label {
+			font-size: 2rem !important;
 			background-color: $color-secondary-light-1;
 		}
 	}

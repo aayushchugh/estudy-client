@@ -55,8 +55,6 @@ function Form() {
 					variant='outlined'
 					label='Name'
 					type='text'
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setName(e.target.value)}
 					required
@@ -67,8 +65,6 @@ function Form() {
 					variant='outlined'
 					label='email'
 					type='email'
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setEmail(e.target.value)}
 					required
@@ -79,8 +75,6 @@ function Form() {
 					variant='outlined'
 					label='Password'
 					type='password'
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setPassword(e.target.value)}
 					required
@@ -91,8 +85,6 @@ function Form() {
 					variant='outlined'
 					label='confirm Password'
 					type='password'
-					inputProps={{ style: { fontSize: 20 } }}
-					InputLabelProps={{ style: { fontSize: 20 } }}
 					fullWidth
 					onChange={e => setConfirmPassword(e.target.value)}
 					required

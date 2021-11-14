@@ -7,6 +7,10 @@
 	margin: 1.5rem;
 	transition: all 0.3s;
 
+	a {
+		text-decoration: none;
+	}
+
 	&:hover {
 		color: $color-primary;
 	}

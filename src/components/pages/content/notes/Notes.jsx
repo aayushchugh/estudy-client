@@ -70,7 +70,7 @@ function Notes() {
 								note.subjectTitle.toLowerCase() ===
 								activeSubject.toLowerCase() ? (
 									<li className='chapter-name' key={note._id}>
-										{note.title}
+										<a href={note.link}>{note.title}</a>
 									</li>
 								) : (
 									' '

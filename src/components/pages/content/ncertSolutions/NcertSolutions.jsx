@@ -70,7 +70,7 @@ function NcertSolutions() {
 								ncertSolution.subjectTitle.toLowerCase() ===
 								activeSubject.toLowerCase() ? (
 									<li className='chapter-name' key={ncertSolution._id}>
-										{ncertSolution.title}
+										<a href={ncertSolution.link}>{ncertSolution.title}</a>
 									</li>
 								) : (
 									' '

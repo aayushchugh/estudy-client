@@ -70,7 +70,7 @@ function Pyq() {
 								pyq.subjectTitle.toLowerCase() ===
 								activeSubject.toLowerCase() ? (
 									<li className='chapter-name' key={pyq._id}>
-										{pyq.title}
+										<a href={pyq.link}>{pyq.title}</a>
 									</li>
 								) : (
 									' '
